@@ -1,1 +1,1 @@
-Welcome to the scte-website-ui wiki!
+[Glossary](https://github.com/aqkhan/scte-website-ui/wiki/Glossary)
