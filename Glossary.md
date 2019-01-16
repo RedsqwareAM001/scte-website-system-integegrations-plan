@@ -22,16 +22,16 @@ Following are the terms that will be used throughout this documentation. Definit
 
 **Monolith:** An architecture style in which functionally distinguishable aspects (for example data input and output, data processing, error handling, and the user interface) are all interwoven, rather than containing architecturally separate components.
 
-**Scaling:**
+**Scalability:** Scalability is the trait where a software system can handle increased loads of work.
 
-**Service:**
+**Service:** Piece of software system responsible for performing specific task(s).
 
-**Server:**
+**Server:** A computer on which software system is running.
 
-**Serverless Architecture:**
+**Serverless Architecture:** Software design pattern where applications are hosted by a third-party service, eliminating the need for server software and hardware management by the developer.
 
-**Serverless Infrastructure:**
+**Serverless Infrastructure:** Infrastructure as code in Serverless is a way of programmatically defining the resources your project is going to use.
 
-**Software System:**
+**Software System:** A system on intercommunicating components based on software forming part of a computer system.
 
-**SSO:**
+**SSO:** Single Sign-On. A service that is solely responsible for user authentication.
