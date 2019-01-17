@@ -26,3 +26,8 @@ While [microservices](https://github.com/aqkhan/scte-website-ui/wiki/Glossary#mi
 ### Interfacing via API
 
 ![Exhibit B](https://s3.amazonaws.com/fallback-assets1/MicroserviceIntegrationExample2.png)
+
+***
+
+### Interfacing with Database
+![Exhibit C](https://s3.amazonaws.com/fallback-assets1/MicroserviceIntegrationExample-Page-2.png)
