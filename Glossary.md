@@ -6,6 +6,9 @@ A piece of software responsible for computation, data streaming, and manipulatio
 ### CMS
 A front-end visual shell to manage various aspects of a software system.
 
+### Coupling
+Interdependence between services/modules.
+
 ### Custom Software
 A piece of software that is specially developed for some specific organization or user.
 
