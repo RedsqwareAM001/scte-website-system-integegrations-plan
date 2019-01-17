@@ -39,6 +39,9 @@ An architectural style that structures an application as a collection of service
 ### Monolith
 An architecture style in which functionally distinguishable aspects (for example data input and output, data processing, error handling, and the user interface) are all interwoven, rather than containing architecturally separate components.
 
+### Nanoservice
+Contains the infrastructure definition for itself.
+
 ### Scalability
 Scalability is the trait where a software system can handle increased loads of work.
 
