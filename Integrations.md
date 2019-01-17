@@ -16,5 +16,13 @@ Some services might have a high contingency on other services resulting in back 
 While [microservices](https://github.com/aqkhan/scte-website-ui/wiki/Glossary#microservice) can always interface on the network layer to share and exchange data, we should use network interfacing only when it's absolutely necessary. [Microservices](https://github.com/aqkhan/scte-website-ui/wiki/Glossary#microservice) can establish connections to [databases](https://github.com/aqkhan/scte-website-ui/wiki/Glossary#database) on the local and remote infrastructure. [Microservice](https://github.com/aqkhan/scte-website-ui/wiki/Glossary#microservice) have the context to process data coming from an external source. Each [microservice](https://github.com/aqkhan/scte-website-ui/wiki/Glossary#microservice) may have its own local data storage system to persist and cache data and avoid continuous sync between [databases](https://github.com/aqkhan/scte-website-ui/wiki/Glossary#database). With this approach, the [software system](https://github.com/aqkhan/scte-website-ui/wiki/Glossary#software-system) becomes more fault tolerant and efficient.
 
 ## Integration Examples
+
 ### Local Network Interface
+
 ![Exhibit A](https://s3.amazonaws.com/fallback-assets1/MicroserviceIntegrationExample1.png)
+
+***
+
+### Interfacing via API
+
+![Exhibit B](https://s3.amazonaws.com/fallback-assets1/MicroserviceIntegrationExample2.png)
