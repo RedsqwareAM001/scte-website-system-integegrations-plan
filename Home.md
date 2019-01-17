@@ -8,3 +8,4 @@
 * [Interfacing via API](https://github.com/aqkhan/scte-website-ui/wiki/Integrations#interfacing-via-api)
 * [Interfacing with Database](https://github.com/aqkhan/scte-website-ui/wiki/Integrations#interfacing-with-database)
 * [SCTE Website User Stories & Cases](https://signature1.basecamphq.com/projects/14315641/file/248138672/SCTE_WEBSITE_USER-STORIES_011219v03.xlsx)
+* [Glossary](https://github.com/aqkhan/scte-website-ui/wiki/Glossary)
