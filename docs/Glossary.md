@@ -1,3 +1,5 @@
+[< Return to Home](https://redsqwaream001.github.io/scte-website-system-integegrations-plan/)
+
 Following are the terms that will be used throughout this documentation. Definitions used for these terms represent their context in this document and are not necessarily the exact definitions of these terms.
 
 ### Back-end
@@ -68,3 +70,5 @@ A use case describes a way in which a real-world actor interacts with the system
 
 ### User story
 A user story describes the type of user, what they want and why.
+
+[< Return to Home](https://redsqwaream001.github.io/scte-website-system-integegrations-plan/)
