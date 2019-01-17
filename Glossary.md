@@ -4,6 +4,7 @@ Following are the terms that will be used throughout this documentation. Definit
 A piece of software responsible for computation, data streaming, and manipulation.
 
 ### Business unit
+A specific business function.
 
 ### CMS
 A front-end visual shell to manage various aspects of a software system.
@@ -60,7 +61,7 @@ A system on intercommunicating components based on software forming part of a co
 Single Sign-On. A service that is solely responsible for user authentication.
 
 ### User cases
-A use case describes a way in which a real-world actor interacts with the system
+A use case describes a way in which a real-world actor interacts with the system.
 
 ### User story
-A user story describes the type of user, what they want and why
+A user story describes the type of user, what they want and why.
