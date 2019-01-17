@@ -60,5 +60,7 @@ A system on intercommunicating components based on software forming part of a co
 Single Sign-On. A service that is solely responsible for user authentication.
 
 ### User cases
+A use case describes a way in which a real-world actor interacts with the system
 
-### User Story
+### User story
+A user story describes the type of user, what they want and why
