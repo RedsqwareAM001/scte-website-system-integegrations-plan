@@ -63,7 +63,7 @@ A system on intercommunicating components based on software forming part of a co
 ### SSO
 Single Sign-On. A service that is solely responsible for user authentication.
 
-### User cases
+### Use case
 A use case describes a way in which a real-world actor interacts with the system.
 
 ### User story
