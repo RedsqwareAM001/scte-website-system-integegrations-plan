@@ -1,7 +1,7 @@
 Following are the terms that will be used throughout this documentation. Definitions used for these terms represent their context in this document and are not necessarily the exact definitions of these terms.
 
 ### Back-end
-A piece of software responsible for computation, data streaming and manipulation.
+A piece of software responsible for computation, data streaming, and manipulation.
 
 ### CMS
 A front-end visual shell to manage various aspects of a software system.
