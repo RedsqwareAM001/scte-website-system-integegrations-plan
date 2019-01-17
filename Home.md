@@ -1,3 +1,4 @@
-[Glossary](https://github.com/aqkhan/scte-website-ui/wiki/Glossary)
+### Quick links
 
-[Architecture](https://github.com/aqkhan/scte-website-ui/wiki/Architecture)
+* [Glossary](https://github.com/aqkhan/scte-website-ui/wiki/Glossary)
+* [Architecture](https://github.com/aqkhan/scte-website-ui/wiki/Architecture)
