@@ -3,6 +3,8 @@ Following are the terms that will be used throughout this documentation. Definit
 ### Back-end
 A piece of software responsible for computation, data streaming, and manipulation.
 
+### Business unit
+
 ### CMS
 A front-end visual shell to manage various aspects of a software system.
 
@@ -56,3 +58,7 @@ A system on intercommunicating components based on software forming part of a co
 
 ### SSO
 Single Sign-On. A service that is solely responsible for user authentication.
+
+### User cases
+
+### User Story
