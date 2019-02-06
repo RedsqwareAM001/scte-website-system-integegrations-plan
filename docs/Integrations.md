@@ -35,6 +35,13 @@ While [microservices](https://redsqwaream001.github.io/scte-website-system-integ
 ![Exhibit C](https://s3.amazonaws.com/fallback-assets1/MicroserviceIntegrationExample-Page-2.png)
 
 ## Systems Integration via Messaging Queue(s)
+
+### Message Queues
+A message queue provides an asynchronous communications protocol, a system that puts a message onto a message queue does not require an immediate response to continuing processing. Email is probably the best example of asynchronous messaging. When an email is sent can the sender continue processing other things without an immediate response from the receiver. This way of handling messages decouple the producer from the consumer. The producer and the consumer of the message do not need to interact with the message queue at the same time.
+
+### Examples
+
+
 In the proposed microservices architecture, we can fullfill a user story by employing a single service or by uttilizing multiple services at the same time. When multiple services are in play, we can primarily perform a task by either:
 * Rest Synchronous Model
    
@@ -44,9 +51,53 @@ In the proposed microservices architecture, we can fullfill a user story by empl
 
   With messaging based asynchronous model, events pertaining to software system are pushed to queue/topic and, respond back to the users. That allows multiple receivers/services to process these messages asynchronously, which can signigicantly improve perfromance of the software system. If the messaging queue management system is run on multiple nodes, the intrgrations system become highly available, more fault tolerant and scalable ensuring seemless communication between services in the software system. Once message is pushed to the queue, the producer service/process can go back to serve user resulting in a non-blocking behaviour. Consumers/receivers can read messages from the queue and, process it asynchronously.
 
+![Exhibit A](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/assets/ee12981f-07fd-4efe-b986-a5914fb37798.png)
+###### Cloud Native programming with Golang by Martin Helmich, Mina Andrawos, REST web services and asynchronous messaging. [Oreilly.com](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/043c95cd-6796-4123-969e-9b91b548aa9d.xhtml)
+
 ***
 
-![Exhibit A](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/assets/ee12981f-07fd-4efe-b986-a5914fb37798.png)
-###### Cloud Native programming with Golang by Martin Helmich, Mina Andrawos, REST web services and asynchronous messaging [Oreilly.com](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/043c95cd-6796-4123-969e-9b91b548aa9d.xhtml)
+## Benefits of using message queues for systems Integration
+* __Decoupling__
+
+   It’s extremely difficult to predict, at the start of a project, what the future needs of the project will be. By introducing a layer in between processes, message queues create an implicit, data-based interface that both processes implement. This allows you to extend and modify these processes independently, by simply ensuring they adhere to the same interface requirements.
+
+* __Redundancy__
+
+   Sometimes processes fail when processing data. Unless that data is persisted, it’s lost forever. Queues mitigate this by persisting data until it has been fully processed. The put-get-delete paradigm, which many message queues use, requires a process to explicitly indicate that it has finished processing a message before the message is removed from the queue, ensuring your data is kept safe until you’re done with it.
+
+* __Scalability__
+
+   Because message queues decouple your processes, it’s easy to scale up the rate with which messages are added to the queue or processed; simply add another process. No code needs to be changed, no configurations need to be tweaked. Scaling is as simple as adding more power.
+
+* __Resiliency__
+
+   When part of your architecture fails, it doesn’t need to take the entire system down with it. Message queues decouple processes, so if a process that is processing messages from the queue fails, messages can still be added to the queue to be processed when the system recovers. This ability to accept requests that will be retried or processed at a later date is often the difference between an inconvenienced customer and a frustrated customer.
+
+* __Delivery Guarantees__
+
+   The redundancy provided by message queues guarantees that a message will be processed eventually, so long as a process is reading the queue. On top of that, IronMQ provides an only-delivered-once guarantee. No matter how many processes are pulling data from the queue, each message will only be processed a single time. This is made possible because retrieving a message “reserves” that message, temporarily removing it from the queue. Unless the client specifically states that it’s finished with that message, the message will be placed back on the queue to be processed after a configurable amount of time.
+* __Ordering Guarantees__
+
+   In a lot of situations, the order with which data is processed is important. Message queues are inherently ordered, and capable of providing guarantees that data will be processed in a specific order. IronMQ guarantees that messages will be processed using FIFO (first in, first out), so the order in which messages are placed on a queue is the order in which they’ll be retrieved from it.
+* __Buffering__
+
+   In any non-trivial system, there are going to be components that require different processing times. For example, it takes less time to upload an image than it does to apply a filter to it. Message queues help these tasks operate at peak efficiency by offering a buffer layer–the process writing to the queue can write as fast as it’s able to, instead of being constrained by the readiness of the process reading from the queue. This buffer helps control and optimize the speed with which data flows through your system.
+* __Understanding Data Flow__
+
+   In a distributed system, getting an overall sense of how long user actions take to complete and why is a huge problem. Message queues, through the rate with which they are processed, help to easily identify under-performing processes or areas where the data flow is not optimal.
+* __Asynchronous Communication__
+
+   A lot of times, you don’t want to or need to process a message immediately. Message queues enable asynchronous processing, which allows you to put a message on the queue without processing it immediately.   For long-running API calls, SQL reporting queries, or any other operation that takes more than a second, consider using a queue.   Queue up as many messages as you like, then process them at your leisure.
+
+
+## Popular Messaging Queue Solutions
+* IBM MQ
+* RabbitMQ
+* ActiveMQ
+* Apache Kafka
+
+###### Source [IT Central Station](https://www.itcentralstation.com/categories/message-queue)
+
+***
 
 [< Return to Home](https://redsqwaream001.github.io/scte-website-system-integegrations-plan/)
