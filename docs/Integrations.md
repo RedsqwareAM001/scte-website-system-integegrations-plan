@@ -35,13 +35,6 @@ While [microservices](https://redsqwaream001.github.io/scte-website-system-integ
 ![Exhibit C](https://s3.amazonaws.com/fallback-assets1/MicroserviceIntegrationExample-Page-2.png)
 
 ## Systems Integration via Messaging Queue(s)
-
-### Message Queues
-A message queue provides an asynchronous communications protocol, a system that puts a message onto a message queue does not require an immediate response to continuing processing. Email is probably the best example of asynchronous messaging. When an email is sent can the sender continue processing other things without an immediate response from the receiver. This way of handling messages decouple the producer from the consumer. The producer and the consumer of the message do not need to interact with the message queue at the same time.
-
-### Examples
-
-
 In the proposed microservices architecture, we can fullfill a user story by employing a single service or by uttilizing multiple services at the same time. When multiple services are in play, we can primarily perform a task by either:
 * Rest Synchronous Model
    
@@ -51,12 +44,25 @@ In the proposed microservices architecture, we can fullfill a user story by empl
 
   With messaging based asynchronous model, events pertaining to software system are pushed to queue/topic and, respond back to the users. That allows multiple receivers/services to process these messages asynchronously, which can signigicantly improve perfromance of the software system. If the messaging queue management system is run on multiple nodes, the intrgrations system become highly available, more fault tolerant and scalable ensuring seemless communication between services in the software system. Once message is pushed to the queue, the producer service/process can go back to serve user resulting in a non-blocking behaviour. Consumers/receivers can read messages from the queue and, process it asynchronously.
 
-![Exhibit A](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/assets/ee12981f-07fd-4efe-b986-a5914fb37798.png)
-###### Cloud Native programming with Golang by Martin Helmich, Mina Andrawos, REST web services and asynchronous messaging. [Oreilly.com](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/043c95cd-6796-4123-969e-9b91b548aa9d.xhtml)
+![Sync vs Async](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/assets/ee12981f-07fd-4efe-b986-a5914fb37798.png)
+###### Diagram Credit: Cloud Native programming with Golang by Martin Helmich, Mina Andrawos, REST web services and asynchronous messaging. [Oreilly.com](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/043c95cd-6796-4123-969e-9b91b548aa9d.xhtml)
 
 ***
 
-## Benefits of using message queues for systems Integration
+### Message Queues
+A message queue provides an asynchronous communications protocol, a system that puts a message onto a message queue does not require an immediate response to continuing processing. Email is probably the best example of asynchronous messaging. When an email is sent can the sender continue processing other things without an immediate response from the receiver. This way of handling messages decouple the producer from the consumer. The producer and the consumer of the message do not need to interact with the message queue at the same time.
+
+### A few use cases
+* Sending user notification (via email/sms/push)
+* Updating user status across the system upon completiting a certain course/certfication
+* Aggregating and generating reports
+* Tracking user transactions
+* Tracking user activity
+* Aggregating company specific data
+* Media management
+* Updating seach indexes in the software system
+
+## Benefits of using message queues for Systems Integration
 * __Decoupling__
 
    It’s extremely difficult to predict, at the start of a project, what the future needs of the project will be. By introducing a layer in between processes, message queues create an implicit, data-based interface that both processes implement. This allows you to extend and modify these processes independently, by simply ensuring they adhere to the same interface requirements.
@@ -91,12 +97,17 @@ In the proposed microservices architecture, we can fullfill a user story by empl
 
 
 ## Popular Messaging Queue Solutions
-* IBM MQ
-* RabbitMQ
-* ActiveMQ
-* Apache Kafka
+* [IBM MQ](https://www.ibm.com/products/mq)
+* [RabbitMQ](https://www.rabbitmq.com/)
+* [AWS SQS](https://aws.amazon.com/sqs/)
+* [ActiveMQ](http://activemq.apache.org/)
+* [Apache Kafka](https://kafka.apache.org/)
 
-###### Source [IT Central Station](https://www.itcentralstation.com/categories/message-queue)
+## Message Queue Management System for SCTE Software System
+For SCTE Software System, we highly recommend __AWS SQS__. Let's look at some of the factors we considered for choosing __AWS SQS__.
+* Unmanaged Service, NO administrative overhead
+
+   Unlike other populare messaging queues, SQS does not need an administration overhead. AWS manages all ongoing operations and underlying infrastructure needed to provide a highly available and scalable message queuing service. With SQS, there is no upfront cost, no need to acquire, install, and configure messaging software, and no time-consuming build-out and maintenance of supporting infrastructure. SQS queues are dynamically created and scale automatically so you can build and grow applications quickly and efficiently.
 
 ***
 
