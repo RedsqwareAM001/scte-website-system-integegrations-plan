@@ -35,14 +35,14 @@ While [microservices](https://redsqwaream001.github.io/scte-website-system-integ
 ![Exhibit C](https://s3.amazonaws.com/fallback-assets1/MicroserviceIntegrationExample-Page-2.png)
 
 ## Systems Integration via Messaging Queue(s)
-In the proposed microservices architecture, we can fullfill a user story by employing a single service or by uttilizing multiple services at the same time. When multiple services are in play, we can primarily perform a task by either:
+In the proposed microservices architecture, we can fulfill a user story by employing a single service or by utilizing multiple services at the same time. When multiple services are in play, we can primarily perform a task by either:
 * Rest Synchronous Model
    
-   With rest synchronous model there are considerable problems like you might not able to respond in very short time as there could be huge amount of requests, and for each request you are making external call synchronously, it blocks current thread too until it get response from external service. There might be cases where external service is down. You are not sure on external dependency of messaging service. It might cause delay in response.
+   With rest synchronous model there are considerable problems like you might not able to respond in very short time as there could be a huge amount of requests, and for each request, you are making external call synchronously, it blocks current thread too until it get a response from external service. There might be cases where external service is down. You are not sure on the external dependency of messaging service. It might cause a delay in response.
 
 * Messaging based asynchronous model
 
-  With messaging based asynchronous model, events pertaining to software system are pushed to queue/topic and, respond back to the users. That allows multiple receivers/services to process these messages asynchronously, which can signigicantly improve perfromance of the software system. If the messaging queue management system is run on multiple nodes, the intrgrations system become highly available, more fault tolerant and scalable ensuring seemless communication between services in the software system. Once message is pushed to the queue, the producer service/process can go back to serve user resulting in a non-blocking behaviour. Consumers/receivers can read messages from the queue and, process it asynchronously.
+  With messaging based asynchronous model, events pertaining to software system are pushed to queue/topic and, respond back to the users. That allows multiple receivers/services to process these messages asynchronously, which can significantly improve performance of the software system. If the messaging queue management system is run on multiple nodes, the integration system becomes highly available, more fault tolerant and scalable ensuring seamless communication between services in the software system. Once the message is pushed to the queue, the producer service/process can go back to serve user resulting in a non-blocking behavior. Consumers/receivers can read messages from the queue and, process it asynchronously.
 
 ![Sync vs Async](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/assets/ee12981f-07fd-4efe-b986-a5914fb37798.png)
 ###### Diagram Credit: Cloud Native programming with Golang by Martin Helmich, Mina Andrawos, REST web services and asynchronous messaging. [Oreilly.com](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/043c95cd-6796-4123-969e-9b91b548aa9d.xhtml)
@@ -54,13 +54,13 @@ A message queue provides an asynchronous communications protocol, a system that 
 
 ### A few use cases
 * Sending user notification (via email/sms/push)
-* Updating user status across the system upon completiting a certain course/certfication
+* Updating user status across the system upon completing a certain course/certification
 * Aggregating and generating reports
 * Tracking user transactions
 * Tracking user activity
-* Aggregating company specific data
+* Aggregating company-specific data
 * Media management
-* Updating seach indexes in the software system
+* Updating search indexes in the software system
 
 ## Benefits of using message queues for Systems Integration
 * __Decoupling__
@@ -77,7 +77,7 @@ A message queue provides an asynchronous communications protocol, a system that 
 
 * __Resiliency__
 
-   When part of your architecture fails, it doesn’t need to take the entire system down with it. Message queues decouple processes, so if a process that is processing messages from the queue fails, messages can still be added to the queue to be processed when the system recovers. This ability to accept requests that will be retried or processed at a later date is often the difference between an inconvenienced customer and a frustrated customer.
+   When part of your architecture fails, it doesn’t need to take the entire system down with it. Message queues decouple processes, so if a process that is processing messages from the queue fails, messages can still be added to the queue to be processed when the system recovers. This ability to accept requests that will be retired or processed at a later date is often the difference between an inconvenienced customer and a frustrated customer.
 
 * __Delivery Guarantees__
 
@@ -104,10 +104,17 @@ A message queue provides an asynchronous communications protocol, a system that 
 * [Apache Kafka](https://kafka.apache.org/)
 
 ## Message Queue Management System for SCTE Software System
-For SCTE Software System, we highly recommend __AWS SQS__. Let's look at some of the factors we considered for choosing __AWS SQS__.
+For SCTE Software System, we highly recommend __AWS SQS__. Now some of the message queue systems are a little faster and have elaborate features set as compared to AWS SQS but we considered the following __key factors__ for choosing __AWS SQS__:
 * Unmanaged Service, NO administrative overhead
 
-   Unlike other populare messaging queues, SQS does not need an administration overhead. AWS manages all ongoing operations and underlying infrastructure needed to provide a highly available and scalable message queuing service. With SQS, there is no upfront cost, no need to acquire, install, and configure messaging software, and no time-consuming build-out and maintenance of supporting infrastructure. SQS queues are dynamically created and scale automatically so you can build and grow applications quickly and efficiently.
+   Unlike other popular messaging queues, SQS does not need an administration overhead. AWS manages all ongoing operations and underlying infrastructure needed to provide a highly available and scalable message queuing service. With SQS, there is no upfront cost, no need to acquire, install, and configure messaging software, and no time-consuming build-out and maintenance of supporting infrastructure. SQS queues are dynamically created and scale automatically so you can build and grow applications quickly and efficiently.
+
+* AWS Eco System => Seamless Integrations
+
+  SQS is one the many services that AWS provides. Since most of our infrastructure is already on AWS, having a native message queue service in the infrastructure provides seamless integrations between other services such as VPC, EC2, S3 and most importantly Lambda functions. As of 2018, AWS Lambda supports SQS as an event source which increases the efficiency of the development process and the entire software system as by several folds.
+
+## AWS SQS example for SCTE Software System
+Coming soon.
 
 ***
 
