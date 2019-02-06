@@ -34,4 +34,19 @@ While [microservices](https://redsqwaream001.github.io/scte-website-system-integ
 ### Interfacing with Database
 ![Exhibit C](https://s3.amazonaws.com/fallback-assets1/MicroserviceIntegrationExample-Page-2.png)
 
+## Systems Integration via Messaging Queue(s)
+In the proposed microservices architecture, we can fullfill a user story by employing a single service or by uttilizing multiple services at the same time. When multiple services are in play, we can primarily perform a task by either:
+* Rest Synchronous Model
+   
+   With rest synchronous model there are considerable problems like you might not able to respond in very short time as there could be huge amount of requests, and for each request you are making external call synchronously, it blocks current thread too until it get response from external service. There might be cases where external service is down. You are not sure on external dependency of messaging service. It might cause delay in response.
+
+* Messaging based asynchronous model
+
+  With messaging based asynchronous model, events pertaining to software system are pushed to queue/topic and, respond back to the users. That allows multiple receivers/services to process these messages asynchronously, which can signigicantly improve perfromance of the software system. If the messaging queue management system is run on multiple nodes, the intrgrations system become highly available, more fault tolerant and scalable ensuring seemless communication between services in the software system. Once message is pushed to the queue, the producer service/process can go back to serve user resulting in a non-blocking behaviour. Consumers/receivers can read messages from the queue and, process it asynchronously.
+
+***
+
+![Exhibit A](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/assets/ee12981f-07fd-4efe-b986-a5914fb37798.png)
+###### Cloud Native programming with Golang by Martin Helmich, Mina Andrawos, REST web services and asynchronous messaging [Oreilly.com](https://www.oreilly.com/library/view/cloud-native-programming/9781787125988/043c95cd-6796-4123-969e-9b91b548aa9d.xhtml)
+
 [< Return to Home](https://redsqwaream001.github.io/scte-website-system-integegrations-plan/)
